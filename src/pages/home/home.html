@@ -1,0 +1,23 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title text-center>
+			Searching
+		</ion-title>
+	</ion-navbar>
+	<ion-toolbar color="primary">	
+		<ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterItems()">
+		</ion-searchbar>
+	</ion-toolbar>
+</ion-header>
+
+
+<ion-content no-padding>
+
+		<ion-list class="search-css" *ngIf="searchTerm != ''" >
+			<ion-item *ngFor=" let item of filtereditems" color="primary" >
+				{{item.country}} 
+			</ion-item>
+		</ion-list>
+
+	
+</ion-content>
